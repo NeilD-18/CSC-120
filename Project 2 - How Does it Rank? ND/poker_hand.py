@@ -1,3 +1,5 @@
+from distutils.log import error
+from tkinter import E
 from card import *
 from deck import *
 from copy import deepcopy
@@ -26,7 +28,11 @@ class PokerHand:
         """
         Function that adds card object passed in as a parameter to the hand
         """
-        self.__hand.append(card)
+        #make so it can't add 6 cards
+        if self.__hand.size() < max_cards_in_hand:
+            self.__hand.append(card)
+        else:
+            raise Exception("Hand is full")
     
     def get_ith_card(self, index):
         """
@@ -35,6 +41,15 @@ class PokerHand:
         :return: a card object
         """
         return self.__hand[index]
+    
+    def size(self):
+        """
+        Get the current size of the hand
+        
+        :return: Integer representing the size of the hand
+        """
+        return len(self.__hand)
+    
     
     def __str__(self):
         """
@@ -121,6 +136,9 @@ class PokerHand:
         
         if classification_of_hand == "Flush" and classification_of_other_hand != "Flush":
             return 1 
+        
+        else:
+            return 0
       
         
 
