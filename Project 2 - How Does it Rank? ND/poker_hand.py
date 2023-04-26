@@ -116,7 +116,12 @@ class PokerHand:
         zero if they are worth the SAME (a tie), and a positive number if
         self is worth MORE than other_hand
         """
+        classification_of_hand = self.determine_classification_of_hand()
+        classification_of_other_hand = other_hand.determine_classification_of_hand()
         
+        if classification_of_hand == "Flush" and classification_of_other_hand != "Flush":
+            return 1 
+      
         
 
 if __name__ == "__main__":
