@@ -1,0 +1,21 @@
+Neil Daterao
+Lab 05 Questions
+
+Question #1: What methods are private?
+__row_as_string(), __three_in_a_row(), __is_winner() are all private methods.
+
+
+Question #2: What instance variables does it have?
+self.__board = [] is the instance variable initialized in the constructor. This list will store the tic tac toe board.
+
+Question #3: Write a short description of the internal representation of a board
+When the board object is created, a parameter is passed in giving the tic tac toe characters on the board as a list of strings.
+For example, [" X ", "O O", "XXO"]". Each index in the list represents a row on the board. The object stores the board in self.__board,
+as a list of lists of strings, where each index is a spot on the board. The given parameter will be translated and stored in self.__board as
+[[" ", "X", " "], ["O", " ", "O"], ["X", "X", "O"]].
+
+
+
+
+
+
