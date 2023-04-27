@@ -2,7 +2,7 @@ from card import *
 from random import shuffle
 
 """
-Module that contains a deck class
+Module that contains a Deck class
 
 :author: Neil Daterao
 """
@@ -23,6 +23,7 @@ class Deck:
                 card = Card(rank,suit)
                 self.__deck_contents.append(card)
     
+    
     def shuffle(self):
         """
         Function that shuffles the contents of the deck
@@ -30,6 +31,7 @@ class Deck:
         :return: None
         """
         shuffle(self.__deck_contents)
+    
     
     def deal(self):
         """
@@ -45,6 +47,7 @@ class Deck:
             card_to_be_dealt = self.__deck_contents[self.size()-1]
             self.__deck_contents.pop()
             return card_to_be_dealt
+    
     
     def size(self):
         """
@@ -68,6 +71,7 @@ class Deck:
         return string_version_of_deck
 
 if __name__ == "__main__":
+    #messy tests
     deck = Deck()
     print(deck)
     deck.shuffle()

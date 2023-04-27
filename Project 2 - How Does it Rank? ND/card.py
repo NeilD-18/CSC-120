@@ -1,5 +1,5 @@
 """
-Module that has a "card" class 
+Module that has a Card class 
 
 :author: Neil Daterao
 """
@@ -56,6 +56,7 @@ class Card:
             new_rank = "Ace"
         return new_rank 
     
+    
     def __suit_full_name(self):
         """
         Function that translates the suit of the card into the full name of the suit, ex: "Jack of Clubs", "Ace of Diamonds", "3 of Spades" etc...
@@ -72,8 +73,7 @@ class Card:
         elif suit == "C":
             full_suit = "Clubs"
         return full_suit
-        
-    
+           
     
     def __str__(self):
         """
@@ -89,10 +89,8 @@ class Card:
         return str(rank) + " of " + suit 
         
 
-
-
-
 if __name__ == "__main__":
+    #messy tests
     card = Card(12, "D")
     print(card)
 
