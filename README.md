@@ -8,6 +8,6 @@ Object-oriented programming project that compares two poker hands to determine t
 
 # [Project 3 - Java Poker](https://github.com/NeilD-18/CSC-120/tree/main/Project%203%20-%20Java%20Poker%20ND)
 Essentially Project 2 redone in Java. Various implementation changes in Deck Class to allow the dealing of a card from a Deck in O(1) time. 
-_Object-oriented programming project that compares two poker hands to determine the stronger hand. The project consists of three classes: Card Class, Deck Class, and Poker Hand Class. The Card Class encapsulates playing card properties, the Deck Class handles deck creation, shuffling and dealing, and the Poker Hand Class evaluates and compares hand strengths. The project follows good programming practices such as information hiding, private helper functions, modularity, and thorough unit testing. Built using Python.
+Object-oriented programming project that compares two poker hands to determine the stronger hand. The project consists of three classes: Card Class, Deck Class, and Poker Hand Class. The Card Class encapsulates playing card properties, the Deck Class handles deck creation, shuffling and dealing, and the Poker Hand Class evaluates and compares hand strengths. The project follows good programming practices such as information hiding, private helper functions, modularity, and thorough unit testing. Built using Python.
 
 
