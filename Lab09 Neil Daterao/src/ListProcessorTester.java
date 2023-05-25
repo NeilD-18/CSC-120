@@ -9,7 +9,7 @@ public class ListProcessorTester
         Testing.startTests();
         getMinTests();
         getMinIndexTests();
-        //sortTests();
+        sortTests();
         Testing.finishTests();
     }
 

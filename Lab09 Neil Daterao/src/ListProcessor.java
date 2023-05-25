@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * @author Neil Daterao
+ * @note I affirm that I have carried out the attached academic endeavors with full academic honesty, in
+ * accordance with the Union College Honor Code and the course syllabus.
+ */
 public class ListProcessor
 {
     /**
@@ -61,6 +66,15 @@ public class ListProcessor
         return getMinIndex(aList, 0, 1);
     }
 
+    /**
+     * Finds the minimum element of a list and returns the index of that
+     * element. If there is more than one instance of the minimum, then
+     * the lowest index will be returned.  Non-destructive.
+     * @param aList the list in which to find the minimum element.
+     * @param minIndex minimum index. to start, this is 0.
+     * @param currentIndex current index. to start, this is 1.
+     * @return
+     */
     private int getMinIndex(ArrayList<String> aList, int minIndex, int currentIndex) {
         if (currentIndex >= aList.size()) {
             return minIndex;
@@ -74,7 +88,6 @@ public class ListProcessor
 
     }
 
-    
     /**
      * Sorts a list in place. I.E. the list is modified so that it is in order.
      *
@@ -82,17 +95,28 @@ public class ListProcessor
      */
     public void sort(ArrayList<String> aList)
     {
-        if (aList.size() == 0) {
+        sort(aList, 0);
+    }
+
+    /**
+     * Selection sort algorithm for helper function of the public version of sort.
+     *
+     * @param aList the list to sort.
+     * @param startingIndex Starting index of list
+     */
+    private void sort(ArrayList<String> aList, int startingIndex) {
+
+        if (startingIndex == aList.size()) {
             return;
         }
         else {
-            int minIndex = getMinIndex(aList);
-            swap(aList, minIndex, 0);
-            sort(new ArrayList<String>(aList.subList(1, aList.size())));
+            int minIndex = getMinIndex(aList, startingIndex, startingIndex+1);
+            swap(aList, minIndex, startingIndex);
+            sort(aList, startingIndex + 1);
         }
-
 
     }
 }
+
     
 
