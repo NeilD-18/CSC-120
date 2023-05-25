@@ -37,6 +37,7 @@ In this lab, we practiced writing classes in Java. This is essentially Lab 4 red
 # [Lab 8 - Hit the Deck!](https://github.com/NeilD-18/CSC-120/tree/main/Lab08%20Neil%20Daterao)
 In this lab, we had more practice with information hiding. This lab showed us that we can have different implimentations of a method with the same exact behavior. This lab was a subset of our Project 3. We rewrote our deck class such that we could shuffle our deck of cards without actually changing the order of our deck. Lab was tested using various debugging methods. 
 
-# [Lab 9 - Oops, I Did it Again.](
+# [Lab 9 - Oops, I Did it Again.](https://github.com/NeilD-18/CSC-120/tree/main/Lab09%20Neil%20Daterao)
+In this lab we practiced structural recursion and implimented selection sort, recursively. 
 
 
