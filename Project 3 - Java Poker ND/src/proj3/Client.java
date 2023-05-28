@@ -13,9 +13,9 @@ import java.util.Scanner;
 public class Client {
     public static void main(String[] args) {
         String playAgain = "Y";
+        Scanner inputChecker = new Scanner(System.in); 
         
         while (playAgain.equals("Y")) {
-            Scanner inputChecker = new Scanner(System.in); 
             
             System.out.println("Welcome to the poker strength test game! Press return to get your first set of hands! \n");
             inputChecker.nextLine();
@@ -75,6 +75,7 @@ public class Client {
                 else {
                     System.out.println("Incorrect!");
                     gameIsOver = true; 
+                    
                 }
             }
         
@@ -90,6 +91,8 @@ public class Client {
                 return; 
             }
         }
+        inputChecker.close();
+        
 
     }
 
