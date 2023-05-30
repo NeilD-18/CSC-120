@@ -14,16 +14,15 @@ public class Card {
     private int rankOfCard; 
     private String suitOfCard; 
     
-    private final ArrayList<String> SUITS = new ArrayList<String>(Arrays.asList("Spades", "Hearts", "Clubs", "Diamonds")); 
-    private final int RANKS[] = {2,3,4,5,6,7,8,9,10,11,12,13,14};
+    public static final ArrayList<String> SUITS = new ArrayList<String>(Arrays.asList("Spades", "Hearts", "Clubs", "Diamonds")); 
+    public static final int MINCARDRANK = 2;
+    public static final int MAXCARDRANK = 14; 
     private final int JACK = 11;
     private final int QUEEN = 12;
     private final int KING = 13;
     private final int ACE = 14;
     private final int DEFAULTCARDRANK = 2; 
     private final String DEFAULTCARDSUIT = "Spades"; 
-    private final int MINCARDRANK = 2;
-    private final int MAXCARDRANK = 14; 
     private final Map<String, Integer> stringRankToIntMap = new HashMap<String, Integer>() {{
         put("two", 2);
         put("three", 3);

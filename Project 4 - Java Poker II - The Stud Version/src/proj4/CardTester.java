@@ -76,7 +76,7 @@ public class CardTester {
         String actualHearts = cardWithSuitHearts.getSuit();
         Testing.assertEquals("Testing get suit with a card with suit Hearts", expectedHearts, actualHearts);
 
-        Card cardWithSuitSpades = new Card(7, 0);
+        Card cardWithSuitSpades = new Card("7", "Spades");
         String expectedSpades = "Spades";
         String actualSpades = cardWithSuitSpades.getSuit();
         Testing.assertEquals("Testing get suit with a card with suit Spades", expectedSpades, actualSpades);
@@ -98,32 +98,43 @@ public class CardTester {
         Card cardAceSpades = new Card("ACE", "Spades");
         String expectedAceSpades = "Ace of Spades";
         String actualAceSpades = cardAceSpades.toString();
-        Testing.assertEquals("Testing card of Ace of Spades", expectedAceSpades, actualAceSpades);
+        Testing.assertEquals("Testing card of Ace of Spades all caps", expectedAceSpades, actualAceSpades);
 
-        Card cardKingDiamonds = new Card(13, 3);
+        Card cardKingDiamonds = new Card("kInG", "Diamonds");
         String expectedKingDiamonds = "King of Diamonds";
         String actualKingDiamonds = cardKingDiamonds.toString();
-        Testing.assertEquals("Testing card of King of Diamonds", expectedKingDiamonds, actualKingDiamonds);
+        Testing.assertEquals("Testing card of King of Diamonds, string", expectedKingDiamonds, actualKingDiamonds);
 
         Card cardQueenHearts = new Card(12, 1);
         String expectedQueenHearts = "Queen of Hearts";
         String actualQueenHearts = cardQueenHearts.toString();
-        Testing.assertEquals("Testing card of Queen of Hearts", expectedQueenHearts, actualQueenHearts);
+        Testing.assertEquals("Testing card of Queen of Hearts, int ", expectedQueenHearts, actualQueenHearts);
 
         Card cardJackClubs = new Card("jAcK", "Clubs");
         String expectedJackClubs = "Jack of Clubs";
         String actualJackClubs = cardJackClubs.toString();
-        Testing.assertEquals("Testing card of Jack of Clubs", expectedJackClubs, actualJackClubs);
+        Testing.assertEquals("Testing card of Jack of Clubs, case insensitive string", expectedJackClubs, actualJackClubs);
 
         Card card10Diamonds = new Card(10, 3);
         String expected10Diamonds = "10 of Diamonds";
         String actual10Diamonds = card10Diamonds.toString();
-        Testing.assertEquals("Testing card of 10 of Diamonds", expected10Diamonds, actual10Diamonds);
+        Testing.assertEquals("Testing card of 10 of Diamonds, int", expected10Diamonds, actual10Diamonds);
 
         Card card6Spades = new Card(6, 0);
         String expected6Spades = "6 of Spades";
         String actual6Spades = card6Spades.toString();
         Testing.assertEquals("Testing card of 6 of Spades", expected6Spades, actual6Spades);
+
+        Card cardInvalidInput = new Card("fifteen", "Charlie");
+        String expectedDefaultCard = "2 of Spades"; 
+        String actualDefaultCard = cardInvalidInput.toString(); 
+        Testing.assertEquals("Testing card of invalid input strings", expectedDefaultCard, actualDefaultCard);
+
+        Card cardInvalidInputIntegers = new Card(15, -1);
+        String expectedDefaultCardIntegers = "2 of Spades"; 
+        String actualDefaultCardIntegers = cardInvalidInputIntegers.toString(); 
+        Testing.assertEquals("Testing card of invalid input input intgers", expectedDefaultCardIntegers, actualDefaultCardIntegers);
+
     }
     
 }

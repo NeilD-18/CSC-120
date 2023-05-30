@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8710c4e-5abb-4286-8b49-bd26cf0e9950" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lab08 Neil Daterao.ps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 3 - Java Poker ND/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 3 - Java Poker ND/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 3 - Java Poker ND/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 3 - Java Poker ND/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +37,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/dateraon/Desktop/CSC-120-Git/CSC-120/Lab07 Neil Daterao",
+    "last_opened_file_path": "/home/dateraon/Desktop/CSC-120-Git",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>

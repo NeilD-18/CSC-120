@@ -1,6 +1,7 @@
 package proj4; 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class test {
 
@@ -24,7 +25,21 @@ public class test {
         Card my_card = new Card(15,4); 
         System.out.println(my_card.getRank());
         System.out.println(my_card.getSuit());
-        
+        Deck myDeck = new Deck();
+        System.out.println(myDeck);
+        //ArrayList<Card> pokerHand1;
+        //System.out.println(pokerHand1.size());
+        ArrayList<Card> pokerHand = new ArrayList<Card>(Arrays.asList(
+            new Card("14", "Hearts"), 
+            new Card("14", "Spades"), 
+            new Card("11", "Diamonds"), 
+            new Card("4", "Spades"), 
+            new Card("3", "Clubs"))); 
+        CommunityCardSet mySet = new CommunityCardSet(pokerHand); 
+        System.out.println(mySet);
+        StudPokerHand mypoke = new StudPokerHand(mySet, pokerHand); 
+        System.out.println(mypoke.getIthCard(1));
+        System.out.println(mypoke);
         
     }
 }
