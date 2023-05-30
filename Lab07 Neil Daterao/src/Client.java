@@ -28,5 +28,6 @@ public class Client {
         System.out.println("Game Over!");
         if (D12.getValue() == 2 * D6.getValue()) {System.out.println("D12 Wins!");}
         else {System.out.println("D6 Wins!"); }
+        inputChecker.close();
     }
 }
