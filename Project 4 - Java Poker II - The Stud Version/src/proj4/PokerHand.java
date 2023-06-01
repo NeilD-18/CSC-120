@@ -147,7 +147,7 @@ public class PokerHand {
        int extraCardRankInThisHand = DEFAULTCARDRANK;
        ArrayList<Integer> pairsInOtherHand = new ArrayList<Integer>();
        int extraCardRankInOtherHand = DEFAULTCARDRANK; 
-       int maxIndex = 2; //Magic number but since the function is private it's okay! The reason for this magic number is to account for hands where we are comparing 4 of a kind to a 2 regular 2 pair.
+       int maxIndex = 2; //Magic number but since the function is private it's okay! The reason for this magic number is to account for the fact that we're comparing two different pairs 
 
        int[] ranksInThisHand = getRanksOfHandInArray(); 
        int[] ranksInOtherHand = otherHand.getRanksOfHandInArray(); 
@@ -156,23 +156,30 @@ public class PokerHand {
        Map<Integer, Integer> countsOfRanksInOtherHand = ArrayUtilities.Counter(ranksInOtherHand); 
        
        for (int rank : countsOfRanksInThisHand.keySet()) { 
-           if (countsOfRanksInThisHand.get(rank) >= 2) { 
+           if (countsOfRanksInThisHand.get(rank) == 4) { 
                pairsInThisHand.add(rank);
+               pairsInThisHand.add(rank); //Treat four of a kind as two "two-pairs"
+           }
+           else if (countsOfRanksInThisHand.get(rank) >= 2) { 
+               pairsInThisHand.add(rank); 
            }
            else { extraCardRankInThisHand = rank; }
        }
 
        for (int rank : countsOfRanksInOtherHand.keySet()) { 
-        if (countsOfRanksInOtherHand.get(rank) >= 2) { 
+        if (countsOfRanksInOtherHand.get(rank) == 4) { 
+            pairsInOtherHand.add(rank);
             pairsInOtherHand.add(rank);
         }
+        else if (countsOfRanksInOtherHand.get(rank) >= 2) { 
+            pairsInOtherHand.add(rank);
+        }
+        
         else { extraCardRankInOtherHand = rank; }
     }
         Collections.sort(pairsInThisHand, Comparator.reverseOrder());
         Collections.sort(pairsInOtherHand, Comparator.reverseOrder());
-
-        if (pairsInThisHand.size() != pairsInOtherHand.size()) { maxIndex = 1; }
-
+       
         for (int i=FIRSTVALIDCARDINDEX; i < maxIndex; i++) { 
             if (pairsInThisHand.get(i) > pairsInOtherHand.get(i)) { return 1; }
             else if (pairsInThisHand.get(i) < pairsInOtherHand.get(i)) { return -1; }
@@ -215,7 +222,7 @@ public class PokerHand {
         Collections.sort(extraCardsInThisHand, Comparator.reverseOrder());
         Collections.sort(extraCardsInOtherHand, Comparator.reverseOrder());
         
-        if (extraCardsInThisHand.size() != extraCardsInOtherHand.size()) { maxIndex = 2; }
+        if (extraCardsInThisHand.size() != extraCardsInOtherHand.size() || extraCardsInThisHand.size() == 2 || extraCardsInOtherHand.size() == 2) { maxIndex = 2; }
 
         if (pairInThisHand == pairInOtherHand) { 
             for (int i = FIRSTVALIDCARDINDEX; i < maxIndex; i++) {
@@ -257,8 +264,6 @@ public class PokerHand {
        //Since we alreay know this is a flush, we have to check the ranks of the card and we can use the same algorithm we used to check high cards. 
         return determineWinningHighCard(otherHand); 
    }
-   
-   
    
     /**
     * Determines how this hand compares to another hand, returns

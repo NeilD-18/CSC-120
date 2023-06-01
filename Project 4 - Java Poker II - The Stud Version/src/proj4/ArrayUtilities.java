@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class with helpful Array Utilities, most notably "Counter". This has the same behavior as Counter from collections in Python.
- * 
+ * Class with helpful Array Utilities, most notably "Counter". This has the same behavior as Counter from Collections in Python.
  * @author Neil Daterao
  */
 public class ArrayUtilities {

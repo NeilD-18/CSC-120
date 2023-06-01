@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 /**
  * Class that models a 2 card poker hand that also has access to the community cards 
+ * @author Neil Daterao
  */
 public class StudPokerHand {
     
     private ArrayList<Card> studPokerHandContents; 
+    private CommunityCardSet communityCards; 
     private final int MAXCARDSINSTUDPOKERHAND = 2;
     
 
@@ -18,6 +20,7 @@ public class StudPokerHand {
      * @param cardList ArrayList of cards 
      */
     public StudPokerHand(CommunityCardSet cc, ArrayList<Card> cardList) {
+        communityCards = cc; 
         studPokerHandContents = new ArrayList<Card>();
         for (Card card: cardList ) { addCard(card); }
     }
@@ -77,11 +80,15 @@ public class StudPokerHand {
     * MORE than other
     */
     public int compareTo(StudPokerHand other) { 
-        return 0; 
+        PokerHand otherBestHand = other.getBestFiveCardHand();
+        return getBestFiveCardHand().compareTo(otherBestHand); 
     }
 
 
-
+    /**
+     * Private helper function to determine the best poker hand we have
+     * @return PokerHand object that is the best given the possible poker hands. 
+     */
     private PokerHand getBestFiveCardHand() {
         ArrayList<PokerHand> hands = getAllFiveCardHands();
         PokerHand bestSoFar = hands.get(0);
@@ -93,8 +100,40 @@ public class StudPokerHand {
         return bestSoFar;
     } 
 
+    /**
+     * Private helper function to obtain all possible pokerhands
+     * @return ArrayList of PokerHand objects of all possible poker hands
+     */
     private ArrayList<PokerHand> getAllFiveCardHands() { 
-        return null; 
+        ArrayList<Card> allCardsInPlay = getAllCardsInPlay(); 
+        ArrayList<PokerHand> allPossiblePokerHands = new ArrayList<PokerHand>(); 
+        ArrayList<Card> cardList;
+
+        for (int cardIndex = 0, maxCardIndex = allCardsInPlay.size() ; cardIndex < maxCardIndex; cardIndex++) { 
+            for (int nextCardIndex = cardIndex + 1; nextCardIndex < maxCardIndex; nextCardIndex++) { 
+                cardList = new ArrayList<Card>(allCardsInPlay); 
+                Card firstCardToRemove = cardList.get(cardIndex); 
+                Card secondCardToRemove = cardList.get(nextCardIndex);
+                cardList.remove(firstCardToRemove);
+                cardList.remove(secondCardToRemove);
+                allPossiblePokerHands.add(new PokerHand(cardList)); 
+            }
+        }
+
+        return allPossiblePokerHands; 
+    }
+
+    /**
+     * Private helper function to put all the possible cards into one arraylist to make the data more manageable.
+     * @return An ArrayList of card object of all the cards in play
+     */
+    private ArrayList<Card> getAllCardsInPlay() { 
+        ArrayList<Card> allCardsInPlay = new ArrayList<>(studPokerHandContents);
+        for (int cardIndex = 0; cardIndex < communityCards.size(); cardIndex++) { 
+            Card cardInCommunityCards = communityCards.getIthCard(cardIndex);
+            allCardsInPlay.add(cardInCommunityCards); 
+        }
+        return allCardsInPlay; 
     }
 
 

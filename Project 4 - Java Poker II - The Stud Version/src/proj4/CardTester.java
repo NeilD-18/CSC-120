@@ -9,7 +9,6 @@ public class CardTester {
     
     /**
      * Foreman function which calls all tests.
-     * 
      */
     public static void main(String[] args) {
         Testing.setVerbose(true);

@@ -30,16 +30,43 @@ public class test {
         //ArrayList<Card> pokerHand1;
         //System.out.println(pokerHand1.size());
         ArrayList<Card> pokerHand = new ArrayList<Card>(Arrays.asList(
-            new Card("14", "Hearts"), 
-            new Card("14", "Spades"), 
-            new Card("11", "Diamonds"), 
+            new Card("7", "Hearts"), 
+            new Card("7", "Spades"), 
+            new Card("10", "Diamonds"), 
             new Card("4", "Spades"), 
             new Card("3", "Clubs"))); 
+        ArrayList<Card> hand = new ArrayList<Card>(Arrays.asList(
+            new Card(10,0),
+            new Card(4,2)));
+        ArrayList<Card> otherhand = new ArrayList<Card>(Arrays.asList(
+            new Card(7,0),
+            new Card(7,2)));
         CommunityCardSet mySet = new CommunityCardSet(pokerHand); 
-        System.out.println(mySet);
-        StudPokerHand mypoke = new StudPokerHand(mySet, pokerHand); 
-        System.out.println(mypoke.getIthCard(1));
-        System.out.println(mypoke);
+        StudPokerHand myHand = new StudPokerHand(mySet, hand);
+        StudPokerHand otherHand = new StudPokerHand(mySet, otherhand);
+        System.out.println(myHand.compareTo(otherHand));   
+        ArrayList<Card> pokerHand1 = new ArrayList<Card>(Arrays.asList(
+            new Card("13", "Hearts"),
+            new Card("13", "Spades"),
+            new Card("13", "Diamonds"),
+            new Card("13", "Spades"),
+            new Card("2", "Clubs")
+        ));
+        ArrayList<Card> otherPokerHand1 = new ArrayList<Card>(Arrays.asList(
+            new Card("13", "Diamonds"),
+            new Card("13", "Clubs"),
+            new Card("10", "Hearts"),
+            new Card("10", "Clubs"),
+            new Card("9", "Spades")
+        ));
+        PokerHand poker1 = new PokerHand(pokerHand1);
+        PokerHand othPokerHand1 = new PokerHand(otherPokerHand1);
+        System.out.println(poker1.compareTo(othPokerHand1));
+        
+        //**** TO DO****//
+        //CommunityCardSet test
+        //StudPoker Tests
+        //Actual game lol almost done tho! 
         
     }
 }
