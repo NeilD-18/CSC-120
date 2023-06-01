@@ -13,7 +13,7 @@ Object-oriented programming project that compares two poker hands to determine t
 Essentially Project 2 redone in Java. Various implementation changes in Deck Class to allow the dealing of a card from a Deck in O(1) time. 
 Object-oriented programming project that compares two poker hands to determine the stronger hand. The project consists of three classes: Card Class, Deck Class, and Poker Hand Class. The Card Class encapsulates playing card properties, the Deck Class handles deck creation, shuffling and dealing, and the Poker Hand Class evaluates and compares hand strengths. The project follows good programming practices such as information hiding, private helper functions, modularity, and thorough unit testing. Built using Java.
 
-# [Project 4 - Java Poker II - The Stud Version](https://github.com/NeilD-18/CSC-120/tree/main/Project%204%20-%20Java%20Poker%20II%20%20-%20The%20Stud%20Version)
+# [Project 4 - Java Poker II - The Stud Version](https://github.com/NeilD-18/CSC-120/tree/main/Project%204%20-%20Java%20Poker%20II%20-%20The%20Stud%20Version)
 Game of Poker Similar to the version Texas Hold'em. Refactored version of Project 3, added new Community Card classes and a new Poker Hand class, (Stud Poker Hand). Thus, this is an Object-Oriented Programming Project that models a game of Texas Hold'em. Project also involves use of overloaded constructors and is refactored to be extremely robust and handles many exception errors. The project follows good programming practices such as information hiding, private helper functions, modularity, and thorough unit testing. Built using Java.
 
 # [Lab 1 - Re-presenting Python](https://github.com/NeilD-18/CSC-120/tree/main/Lab%201)
