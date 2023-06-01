@@ -1,5 +1,6 @@
 # CSC-120 - Programming On Purpose 
 An introduction to software design principles aimed at making software more efficient, robust, readable, maintainable, and reusable. An introduction to object-oriented programming and design, including classes, objects, methods, and sub-typing.
+
 "Just because it works doesn't mean it's good" - Professor Chris 
 # [Project 1 - What are the Odds?](https://github.com/NeilD-18/CSC-120/tree/8923af94f51d8ac073a4510a9a5daa54f196cfbe/Project%201%20-%20What%20are%20the%20Odds%3F%20ND)
 
