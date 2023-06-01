@@ -62,9 +62,27 @@ public class test {
         PokerHand poker1 = new PokerHand(pokerHand1);
         PokerHand othPokerHand1 = new PokerHand(otherPokerHand1);
         System.out.println(poker1.compareTo(othPokerHand1));
+
+        ArrayList<Card> firstCommunityCardContents= new ArrayList<Card>(Arrays.asList(
+            new Card("14", "Hearts"), 
+            new Card("14", "Spades"), 
+            new Card("11", "Diamonds"), 
+            new Card("4", "Spades"), 
+            new Card("3", "Clubs"))); 
+        CommunityCardSet firstCommunityCardSet = new CommunityCardSet(firstCommunityCardContents); 
+        System.out.println(firstCommunityCardSet);
+
+        ArrayList<Card> secondCommunityCardContents= new ArrayList<Card>(Arrays.asList(
+            new Card(1, 0), 
+            new Card(-2,0), 
+            new Card("11", "Diamonds"), 
+            new Card("four", "Spades"), 
+            new Card(3, 1))); 
+        CommunityCardSet secondCommunityCardSet = new CommunityCardSet(secondCommunityCardContents); 
+        System.out.println(secondCommunityCardSet);
         
         //**** TO DO****//
-        //CommunityCardSet test
+    
         //StudPoker Tests
         //Actual game lol almost done tho! 
         

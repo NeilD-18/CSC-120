@@ -18,9 +18,8 @@ public class CommunityCardSet {
      */
     public CommunityCardSet(ArrayList<Card> cardList) {
         CommunityCardSetContents = new ArrayList<Card>(); 
-        for (int communityCardCount = 0; communityCardCount < MAXAMOUNTOFCOMMUNITYCARDS; communityCardCount++) { 
-            addCard(cardList.get(communityCardCount)); 
-        }
+        for (Card cardToAdd : cardList) { addCard(cardToAdd); } 
+            
     }
 
     /**
