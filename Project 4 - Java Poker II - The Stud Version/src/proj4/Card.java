@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Class to model a single playing card
  * 
- * @author Neil Datero
+ * @author Neil Daterao
  */
 public class Card {
     private int rankOfCard; 
