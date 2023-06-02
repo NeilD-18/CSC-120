@@ -102,6 +102,9 @@ public class StudPokerHandTester {
         StudPokerHandTester.testSameCommunityCardsOtherHandWins();
         StudPokerHandTester.testDiffCCTwoPair107and77();
         StudPokerHandTester.testHandWithBetterHoleLosesToFlush();
+        StudPokerHandTester.testOnePairTie();
+        StudPokerHandTester.testHighCardFlushWin();
+        StudPokerHandTester.testHighCardWin(); 
     }
 
     private static void testSameCommunityCardsAsBestHand() { 
@@ -225,4 +228,96 @@ public class StudPokerHandTester {
         Testing.assertEquals("Test Different Community Cards, better hole cards lose to flush", expected, actual);
 
     }
+
+    private static void testOnePairTie(){
+        CommunityCardSet communityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("Ace", "Spades"),
+            new Card("King", "Spades"),
+            new Card("7", "Diamonds"),
+            new Card("Queen", "Diamonds"),
+            new Card(10,0)
+        )));
+
+        CommunityCardSet otherCommunityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("Ace", "Hearts"),
+            new Card("King", "Hearts"),
+            new Card("7", "Hearts"),
+            new Card("Queen", "Diamonds"),
+            new Card(10,0)
+        )));
+        StudPokerHand thisPokerHand = new StudPokerHand(communityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("10", "Clubs"),
+            new Card("8", "Diamonds"))));
+        
+        StudPokerHand otherPokerHand = new StudPokerHand(otherCommunityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("10", "Diamonds"),
+            new Card("2", "Hearts"))));
+        
+        int expected = 0;
+        int actual = thisPokerHand.compareTo(otherPokerHand); 
+        Testing.assertEquals("Test Different Community Cards, tie on one pair", expected, actual);
+
+    }   
+
+    private static void testHighCardFlushWin() { 
+        CommunityCardSet communityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("Ace", "Spades"),
+            new Card("King", "Spades"),
+            new Card("7", "Spades"),
+            new Card("Queen", "Diamonds"),
+            new Card(10,1)
+        )));
+
+        CommunityCardSet otherCommunityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("Ace", "Hearts"),
+            new Card("King", "Hearts"),
+            new Card("7", "Hearts"),
+            new Card("7", "Diamonds"),
+            new Card(10,0)
+        )));
+        StudPokerHand thisPokerHand = new StudPokerHand(communityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("10", "Spades"),
+            new Card("8", "Spades"))));
+        
+        StudPokerHand otherPokerHand = new StudPokerHand(otherCommunityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("10", "Hearts"),
+            new Card("9", "Hearts"))));
+        
+        int expected = -1;
+        int actual = thisPokerHand.compareTo(otherPokerHand); 
+        Testing.assertEquals("Test Different Community Cards, other hand wins on high card flush", expected, actual);
+
+    }
+
+    private static void testHighCardWin() { 
+        CommunityCardSet communityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("2", "Spades"),
+            new Card("3", "Clubs"),
+            new Card("4", "Diamonds"),
+            new Card("5", "Diamonds"),
+            new Card(6,0)
+        )));
+
+        CommunityCardSet otherCommunityCards = new CommunityCardSet(new ArrayList<Card>(Arrays.asList(
+            new Card("4", "Hearts"),
+            new Card("3", "Spades"),
+            new Card("2", "Hearts"),
+            new Card("5", "Diamonds"),
+            new Card(6,0)
+        )));
+        StudPokerHand thisPokerHand = new StudPokerHand(communityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("14", "Clubs"),
+            new Card("7", "Diamonds"))));
+        
+        StudPokerHand otherPokerHand = new StudPokerHand(otherCommunityCards, new ArrayList<Card>(Arrays.asList(
+            new Card("14", "Hearts"),
+            new Card("8", "Hearts"))));
+        
+        int expected = -1;
+        int actual = thisPokerHand.compareTo(otherPokerHand); 
+        Testing.assertEquals("Test Different Community Cards, other hand has better high card", expected, actual);
+
+    }
 }
+
+

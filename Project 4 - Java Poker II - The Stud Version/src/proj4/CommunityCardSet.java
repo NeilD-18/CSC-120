@@ -9,8 +9,7 @@ import java.util.ArrayList;
 public class CommunityCardSet {
     
     private ArrayList<Card> CommunityCardSetContents; 
-    private final int MAXAMOUNTOFCOMMUNITYCARDS = 5; 
-
+    public static final int MAXAMOUNTOFCOMMUNITYCARDS = 5; 
 
     /**
      * Non-default constructor, initializes the community cards. Will only initialize up to 5 community cards. 

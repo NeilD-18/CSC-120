@@ -14,7 +14,6 @@ public class Deck {
     private int nextToDeal; 
     public static final int MAXCARDAMOUNT = 52; 
 
-
     /**
      * Default Constructor. Initializes a standard playing card deck of 52 cards. 
      */

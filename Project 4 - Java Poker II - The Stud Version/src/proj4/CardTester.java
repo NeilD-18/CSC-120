@@ -56,14 +56,11 @@ public class CardTester {
         expected = 2;
         actual = cardWithInvalidRank.getRank();
         Testing.assertEquals("Testing get rank with an invalid rank, defaults to 2", expected, actual);
-
-
-
     
         
     }
     
-    
+
     private static void testGetSuit() { 
         Card cardWithSuitDiamonds = new Card("four", "Diamonds"); 
         String expected = "Diamonds";

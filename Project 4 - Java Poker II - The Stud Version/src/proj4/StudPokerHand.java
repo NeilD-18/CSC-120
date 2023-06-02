@@ -10,9 +10,7 @@ public class StudPokerHand {
     
     private ArrayList<Card> studPokerHandContents; 
     private CommunityCardSet communityCards; 
-    private final int MAXCARDSINSTUDPOKERHAND = 2;
-    
-
+    public static final int MAXCARDSINSTUDPOKERHAND = 2;  
 
     /**
      * Non-default constructor. Initializes 2 card poker hand. If array list has more than 2 cards, it will just take the first two cards. 

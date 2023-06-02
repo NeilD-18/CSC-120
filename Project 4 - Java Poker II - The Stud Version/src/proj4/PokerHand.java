@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class PokerHand {
    
-    public static final int MAXCARDSINPOKERHAND = 5; 
+    
     private ArrayList<Card> pokerHandContents;
     private final int FIRSTVALIDCARDINDEX = 0; 
     private final int FLUSH = 4; 
@@ -21,6 +21,7 @@ public class PokerHand {
     private final int ONEPAIR = 2; 
     private final int HIGHCARD = 1; 
     private final int DEFAULTCARDRANK = 2; 
+    public static final int MAXCARDSINPOKERHAND = 5; 
 
     
     /**
@@ -47,7 +48,6 @@ public class PokerHand {
     public int size() {
         return pokerHandContents.size(); 
     }
-
 
     /**
      * 
